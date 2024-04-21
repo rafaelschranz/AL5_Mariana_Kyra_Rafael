@@ -1,27 +1,247 @@
-/* CSS Code, der für alle Web Pages gleich ist und auf allen Web Pages eingebunden werden muss. */
-
-html,
-body {
-  min-height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
+@font-face {
+  font-family: "Lemon Milk";
+  font-weight: 400;
+  src: url("../fonts/LEMONMILK-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Lemon Milk";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/LEMONMILK-RegularItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Lemon Milk";
+  font-weight: 500;
+  src: url("../fonts/LEMONMILK-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Lemon Milk";
+  font-weight: 500;
+  font-style: italic;
+  src: url("../fonts/LEMONMILK-MediumItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Lemon Milk";
+  font-weight: 700;
+  src: url("../fonts/LEMONMILK-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Lemon Milk";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/LEMONMILK-BoldItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Apfel Grotezk";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/ApfelGrotezk-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Apfel Grotezk";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/ApfelGrotezk-Mittel.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Apfel Grotezk";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/ApfelGrotezk-Fett.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Apfel Grotezk";
+  font-weight: 800;
+  font-style: normal;
+  src: url("../fonts/ApfelGrotezk-Satt.woff2") format("woff2");
 }
 
 body {
+  font-family: "Apfel Grotezk";
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style-type: none;
+  padding: 0%;
+}
+h1 {
+  font-family: "LEMON MILK";
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 4.2rem */
+}
+h2 {
+  font-family: "LEMON MILK";
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 3.6rem */
+}
+h3 {
+  font-family: "LEMON MILK";
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 3rem */
+}
+button {
+  display: flex;
+  padding: 0.5rem 1.25rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #000;
+  font-family: "Apfel Grotezk";
+  border-radius: var(--Border-Radius, 1.875rem);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.5rem */
+  color: white;
+}
+.btn_secondary {
+  border: 1px solid var(--Black, #000);
+  background-color: white;
+  color: #000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  align-self: stretch;
+  max-width: 1440px;
+  margin: auto;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-top: 1rem;
+}
+.navbar_links {
+  display: flex;
+  gap: 2rem;
+}
+.logo {
+  color: #000;
+
+  font-family: "LEMON MILK";
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 150%; /* 3rem */
+}
+.container {
+  max-width: 1440px;
+  margin: auto;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-top: 10rem;
+}
+.hero {
+  text-align: center;
+}
+.two_images_grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 5rem;
+}
+.image_link {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text {
+  font-family: "Apfel Grotezk";
+  line-height: 150%; /* 1.875rem */
+}
+.medium {
+  font-size: 1.125rem;
+  font-style: normal;
+}
+.semibold {
+  font-weight: 500;
+}
+.large {
+  font-size: 1.25rem;
+}
+.flex_row {
   display: flex;
   flex-direction: column;
 }
-
-.header,
-.footer {
-  height: 70px;
-  color: #ffffff;
-  background-color: #2487c6;
+.text_button_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.content {
-  flex-grow: 1;
-  background-color: #f7f7f7;
-  padding: 12px;
-  max-width: 800px;
-  margin: auto;
+.product_list {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5rem;
+}
+.product_img {
+  width: 28rem;
+  height: 19rem;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+.product_img:hover {
+  filter: grayscale(0%);
+}
+img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 2rem;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+img:hover {
+  filter: grayscale(0%);
+}
+.img_quote {
+  max-height: 47rem;
+}
+.img_quote_wrapper {
+  text-align: center;
+}
+.footer_social {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+.footer_right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.email_input {
+  padding: 0.75rem;
+  padding-right: 10rem;
+}
+form {
+  display: flex;
+  gap: 0.7rem;
+}
+.footer_bottom {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_legal {
+  display: flex;
+  gap: 2rem;
 }
