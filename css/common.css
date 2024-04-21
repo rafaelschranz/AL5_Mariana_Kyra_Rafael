@@ -343,6 +343,9 @@ form {
 .hero_img{
   max-height: 25rem;
 }
+.product_item{
+  text-align: center;
+}
 }
 .nav {
   max-width: 1440px;
@@ -427,6 +430,9 @@ form {
 
 
   }
+  .first_mobile_nav{
+    margin-top: 2rem;
+  }
   .nav > .nav-links > a {
     display: block;
     width: 100%;
@@ -440,4 +446,18 @@ form {
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
+}
+@media only screen and (max-width: 500px) {
+.logo{
+  font-size: 1.5rem;
+}
+h1{
+  font-size: 2.5rem;
+}
+h2{
+  font-size: 2rem;
+}
+h3{
+  font-size: 1.5rem;
+}
 }
