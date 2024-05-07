@@ -1,1 +1,69 @@
-/* CSS Code, den es für die Start Page braucht */
+/* CSS for Homepage */
+
+/*product list*/
+.product_list {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5rem;
+}
+.product_img {
+  width: 28rem;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+.product_img:hover {
+  filter: grayscale(0%);
+}
+.product_item {
+  margin-top: 2rem;
+}
+
+/* img quote*/
+.img-quote {
+  max-height: 47rem;
+  margin-bottom: 2rem;
+}
+.img-quote_wrapper {
+  text-align: center;
+}
+/*additional styles*/
+.hero_wrapper {
+  text-align: center;
+}
+.two-images_grid {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.image_link {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+.hero_img {
+  max-height: 40rem;
+}
+/* responsive styles */
+@media only screen and (max-width: 800px) {
+  .product_list {
+    margin-top: 2rem;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+  .two-images_grid {
+    margin-top: 2rem;
+  }
+  .hero_img {
+    max-height: 25rem;
+  }
+  .product_item {
+    text-align: center;
+  }
+}
