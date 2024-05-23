@@ -2,6 +2,7 @@
 :root {
   --color-primary: black;
   --color-secondary: white;
+  --color-alternate: #19619f;
 }
 /* Load local fonts */
 
@@ -112,15 +113,16 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 1.5rem */
-  border: 1px solid var(--color-primary);
+  border: 1.5px solid var(--color-primary);
   background-color: var(--color-secondary);
   color: var(--color-primary);
   transition-duration: 0.4s;
   cursor: pointer;
 }
 button:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-alternate);
   color: var(--color-secondary);
+  border-color: var(--color-alternate);
 }
 
 img {
@@ -184,6 +186,11 @@ form {
   font-style: italic;
   font-weight: 700;
   line-height: 150%; /* 3rem */
+  transition: color 0.3s;
+  cursor: pointer;
+}
+.logo:hover {
+  color: var(--color-alternate);
 }
 
 .nav {
@@ -223,7 +230,12 @@ form {
 .nav > #nav-check {
   display: none;
 }
-
+.nav > .nav-items > a {
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav > .nav-items > a:hover {
+  color: var(--color-alternate);
+}
 /* Footer */
 
 .footer_top {
@@ -288,6 +300,27 @@ form {
 .footer-form-input4 {
   grid-area: 2 / 4 / 3 / 5;
 }
+/*social link*/
+.link {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  gap: 0.2rem;
+}
+
+.link:hover {
+  color: #19619f;
+}
+
+.link:active {
+  color: white;
+  background-color: white;
+  transform: scale(0.98);
+}
+
 /* custom css classes */
 
 .btn-secondary {
@@ -375,6 +408,7 @@ form {
   .first_mobile_nav {
     margin-top: 2rem;
   }
+
   .nav > .nav-items > a {
     display: block;
     width: 100%;
