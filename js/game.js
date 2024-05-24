@@ -118,8 +118,4 @@ const onClickSubmit = async () => {
   await databaseClient.insertInto("user", {
     email: emailField.value,
   });
-
-  // Nach dem Speichern verschwindet das Formular, das Game erscheint
-  formContainer.classList.add("hidden");
-  gameContainer.classList.remove("hidden");
 };
