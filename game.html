@@ -253,28 +253,6 @@
         </div>
       </div>
     </section>
-    <script>
-      // Function to show the popup
-      function showPopup() {
-        const section = document.querySelector("section");
-        section.classList.add("active");
-      }
-
-      // Set a timeout to show the popup after 10 seconds
-      setTimeout(showPopup, 1000);
-
-      // Add event listeners to close the popup
-      const section = document.querySelector("section");
-      const overlay = document.querySelector(".overlay");
-      const closeBtn = document.querySelector(".close-btn");
-
-      overlay.addEventListener("click", () =>
-        section.classList.remove("active")
-      );
-      closeBtn.addEventListener("click", () =>
-        section.classList.remove("active")
-      );
-    </script>
 
     <!-- Javascript -->
     <script src="./js/game.js"></script>
