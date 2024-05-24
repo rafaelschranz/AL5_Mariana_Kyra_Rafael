@@ -168,7 +168,7 @@
               <input
                 class="input email_input footer-form-input3"
                 type="text"
-                id="email"
+                id="email-footer"
                 name="email"
                 placeholder="E-Mail"
               />
@@ -571,14 +571,15 @@
             </li>
           </ul>
         </div>
-        <div class="winning-message" style="display: none">
+        <div class="winning-message" style="display: flex">
           <h2>Congratulations!</h2>
           <h3>You have matched all the cards</h3>
           <p>
             Please sign up for the newsletter and receive a 10% discount on your
             next purchase.
           </p>
-          <form class="modal-box_wrapper">
+
+          <form class="modal-box_wrapper" id="formContainer">
             <input
               class="modal-box-input1"
               type="text"
@@ -611,7 +612,7 @@
     </section>
     <!-- Javascript -->
     <script src="./js/databaseClient.js"></script>
-    <script src="./js/index.js"></script>
     <script src="./js/game.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

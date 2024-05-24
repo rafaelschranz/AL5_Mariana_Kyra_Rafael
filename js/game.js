@@ -97,7 +97,7 @@ const gameContainer = document.getElementById("game-container");
 const submitButton = document.getElementById("submit");
 const emailField = document.getElementById("email");
 
-// (2) Interaktionen festlegen
+// (2) Interatkionen festlegen
 
 submitButton.addEventListener("click", async (event) => {
   event.preventDefault();
