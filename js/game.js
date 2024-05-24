@@ -7,6 +7,23 @@ const playGameText = document.querySelector(".modal-box h2");
 const discountText = document.querySelector(".modal-box h3");
 const winningMessage = document.querySelector(".winning-message");
 
+// Function to show the popup
+function showPopup() {
+  const section = document.querySelector("section");
+  section.classList.add("active");
+}
+
+// Set a timeout to show the popup after 10 seconds
+setTimeout(showPopup, 1000);
+
+// Add event listeners to close the popup
+const section = document.querySelector("section");
+const overlay = document.querySelector(".overlay");
+const closeBtn = document.querySelector(".close-btn");
+
+overlay.addEventListener("click", () => section.classList.remove("active"));
+closeBtn.addEventListener("click", () => section.classList.remove("active"));
+
 function flipCard({ target: clickedCard }) {
   if (cardOne !== clickedCard && !disableDeck) {
     clickedCard.classList.add("flip");
