@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Set a timeout to show the popup after 10 seconds
-  setTimeout(showPopup, 10000);
+  setTimeout(showPopup, 5000);
 
   // Add event listeners to close the popup
   overlay.addEventListener("click", () => section.classList.remove("active"));
