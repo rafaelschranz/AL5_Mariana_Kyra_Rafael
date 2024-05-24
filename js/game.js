@@ -7,22 +7,24 @@ const playGameText = document.querySelector(".modal-box h2");
 const discountText = document.querySelector(".modal-box h3");
 const winningMessage = document.querySelector(".winning-message");
 
-// Function to show the popup
-function showPopup() {
+// JavaScript
+document.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector("section");
-  section.classList.add("active");
-}
+  const overlay = document.querySelector(".overlay");
+  const closeBtn = document.querySelector(".close-btn");
 
-// Set a timeout to show the popup after 10 seconds
-setTimeout(showPopup, 1000);
+  // Function to show the popup
+  function showPopup() {
+    section.classList.add("active");
+  }
 
-// Add event listeners to close the popup
-const section = document.querySelector("section");
-const overlay = document.querySelector(".overlay");
-const closeBtn = document.querySelector(".close-btn");
+  // Set a timeout to show the popup after 10 seconds
+  setTimeout(showPopup, 10000);
 
-overlay.addEventListener("click", () => section.classList.remove("active"));
-closeBtn.addEventListener("click", () => section.classList.remove("active"));
+  // Add event listeners to close the popup
+  overlay.addEventListener("click", () => section.classList.remove("active"));
+  closeBtn.addEventListener("click", () => section.classList.remove("active"));
+});
 
 function flipCard({ target: clickedCard }) {
   if (cardOne !== clickedCard && !disableDeck) {

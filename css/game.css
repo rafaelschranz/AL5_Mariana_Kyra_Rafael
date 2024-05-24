@@ -116,12 +116,6 @@ section.active .modal-box {
   padding: 6px 12px;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
 .wrapper {
   padding: 25px;
   border-radius: 10px;
