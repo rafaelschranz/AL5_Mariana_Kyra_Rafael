@@ -186,11 +186,16 @@ form {
   font-style: italic;
   font-weight: 700;
   line-height: 150%; /* 3rem */
-  transition: color 0.3s;
   cursor: pointer;
+  text-shadow: -1.2px -1.2px 0 transparent, 1.2px -1.2px 0 transparent,
+    -1.2px 1.2px 0 transparent, 1.2px 1.2px 0 transparent;
+  transition: text-shadow 1s ease-out, color 1s ease-out; /* Only color will transition smoothly */
+  letter-spacing: 2px;
 }
 .logo:hover {
-  color: var(--color-alternate);
+  color: white; /* This will change instantly */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .nav {
