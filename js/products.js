@@ -32,18 +32,34 @@ const displayProducts = (products) => {
     productImage.src = product.product_image; // Original image URL
     productImage.alt = product.name;
 
+    const productInfo = document.createElement("div");
+    productInfo.className = "product-info"; // New div for product name and price
+
     const productName = document.createElement("h2");
     productName.textContent = product.name;
+    productName.className = "product-name"; // Class for product name styling
 
-    const productDetails = document.createElement("p");
-    productDetails.textContent = `
-      Size: ${product.size}, Color: ${product.color}, 
-      Weight: ${product.weight}, Price: $${product.price}
-    `;
+    const productPrice = document.createElement("p");
+    productPrice.textContent = `$${product.price}`;
+    productPrice.className = "product-price"; // Class for product price styling
+
+    productInfo.appendChild(productName);
+    productInfo.appendChild(productPrice);
+
+    // Create a separate div for product color
+    const productColor = document.createElement("div");
+    productColor.textContent = product.color;
+    productColor.className = "product-color"; // Class for product color styling
+
+    // Create an "Order Now" button
+    const orderButton = document.createElement("button");
+    orderButton.textContent = "Order Now";
+    orderButton.className = "order-button"; // Class for button styling
 
     productItem.appendChild(productImage);
-    productItem.appendChild(productName);
-    productItem.appendChild(productDetails);
+    productItem.appendChild(productInfo);
+    productItem.appendChild(productColor); // Append the color information outside product-info div
+    productItem.appendChild(orderButton); // Append the "Order Now" button
 
     productList.appendChild(productItem);
   });
