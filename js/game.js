@@ -91,6 +91,8 @@ cards.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
 
+//send Data to Database
+
 // (1) Variablen initialisieren
 const formContainer = document.getElementById("formContainer");
 const gameContainer = document.getElementById("game-container");
