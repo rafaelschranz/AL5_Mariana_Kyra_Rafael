@@ -1,0 +1,65 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stoner Studios</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/game.css" />
+    <link rel="stylesheet" href="./css/products.css" />
+    <link rel="icon" type="svg" href="./images/smiley.svg" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-btn">
+        <label for="nav-check">
+          <img class="navbar_icon" src="./images/IcBaselineMenu.svg" alt="" />
+        </label>
+      </div>
+
+      <div class="nav-items">
+        <a class="first_mobile_nav" href="">Collections</a>
+        <a href="">About us</a>
+      </div>
+      <a class="logo center">Stoner Studios</a>
+
+      <a href="game.html"><button>Newsletter</button></a>
+    </div>
+
+ 
+    <!-- products section -->
+    <div class="container">
+      <div class="product_wrapper">
+        <!-- products heading -->
+        <div class="text_button_wrapper">
+          <div class="flex_column">
+            <h2>Products</h2>
+            <p>Discover our latest collection of exclusive t-shirts.</p>
+          </div>
+        </div>
+      </div>
+     
+      <div id="product-list" class="product-list"></div>
+
+
+
+   
+    <!-- Javascript -->
+    <script src="./js/databaseClient.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/products.js"></script>
+  </body>
+</html>

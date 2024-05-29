@@ -65,6 +65,13 @@
 }
 
 /* HTML Elements*/
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
 body {
   font-family: "Apfel Grotezk";
   font-weight: 400;
