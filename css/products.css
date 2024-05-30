@@ -1,3 +1,26 @@
+.collection-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.collection-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.collection-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.collection-name {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
 .product-list {
   display: flex;
   flex-wrap: wrap;
@@ -28,4 +51,9 @@
 }
 .order-button {
   width: 100%;
+}
+.collection-info {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
 }
