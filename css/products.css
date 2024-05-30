@@ -1,21 +1,26 @@
 .collection-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   margin-top: 2rem;
+  justify-content: space-between;
 }
 .collection-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  width: 20%;
+}
+
+.collection-item.selected img {
+  filter: grayscale(0%);
 }
 .collection-image {
-  width: 150px;
-  height: 150px;
+ 
   object-fit: cover;
   border-radius: 8px;
 }
+
 .collection-name {
   margin-top: 0.5rem;
   font-size: 1.2rem;
@@ -52,8 +57,22 @@
 .order-button {
   width: 100%;
 }
-.collection-info {
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 0.5rem;
+@media only screen and (max-width: 900px) {
+  .collection-item {
+  width: 50%;
+  padding: 2rem;
+  }
+  .product-item{
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .collection-item {
+  width: 100%;
+  padding: 0rem;
+  margin-bottom: 2rem;
+  }
+  .product-item{
+    width: 100%;
+  }
 }

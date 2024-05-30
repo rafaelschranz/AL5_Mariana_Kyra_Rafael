@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/game.css" />
+    <link rel="stylesheet" href="./css/products.css" />
+
     <link rel="icon" type="svg" href="./images/smiley.svg" />
 
     <link
@@ -16,603 +18,310 @@
   </head>
 
   <body>
-    <!-- navbar -->
-    <div class="nav">
-      <input type="checkbox" id="nav-check" />
-      <div class="nav-btn">
-        <label for="nav-check">
-          <img class="navbar_icon" src="./images/IcBaselineMenu.svg" alt="" />
-        </label>
-      </div>
-
-      <div class="nav-items">
-        <a class="first_mobile_nav" href="products.html">Collections</a>
-        <a href="">About us</a>
-      </div>
-      <a class="logo center" href="index.html">Stoner Studios</a>
-
-      <a href="game.html"><button>Newsletter</button></a>
-    </div>
-
-    <!-- hero section-->
-    <div class="container">
-      <div class="hero_wrapper">
-        <h1>
-          Discover exclusive t-shirts from <br />
-          Stoner Studios
-        </h1>
-        <div class="margin-small-top">
-          <p class="text medium">
-            Get ready to elevate your style with our limited edition t-shirts.
-          </p>
-        </div>
-        <!-- two images with links -->
-        <div class="two-images_grid">
-          <div class="image_link">
-            <img class="hero_img" src="./images/2.jpg" alt="Stoner" />
-            <h3>Collections</h3>
-            <button>Shop now</button>
-          </div>
-          <div class="image_link">
-            <img class="hero_img" src="./images/17.jpg" alt="stoner_man" />
-            <h3>About us</h3>
-            <button>Shop now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- products section -->
-    <div class="container">
-      <div class="product_wrapper">
-        <!-- products heading -->
-        <div class="text_button_wrapper">
-          <div class="flex_column">
-            <h2>Products</h2>
-            <p>Discover our latest collection of exclusive t-shirts.</p>
-          </div>
-          <button>View all</button>
-        </div>
-      </div>
-      <!-- products items -->
-      <div class="product_list">
-        <div class="product_item">
-          <img
-            class="product_img"
-            src="./images/products/82 - orange.jpg"
-            alt=""
-          />
-          <p class="text medium semibold">Text</p>
-          <p class="text large semibold">55$</p>
-        </div>
-        <div class="product_item">
-          <img
-            class="product_img"
-            src="./images/products/donut thief -  forst green.jpg"
-            alt=""
-          />
-          <p class="text medium semibold">Text</p>
-          <p class="text large semibold">55$</p>
-        </div>
-        <div class="product_item">
-          <img
-            class="product_img"
-            src="./images/products/cookies - beige.jpg"
-            alt=""
-          />
-          <p class="text medium semibold">Text</p>
-          <p class="text large semibold">55$</p>
-        </div>
-        <div class="product_item">
-          <img
-            class="product_img"
-            src="./images/products/mugged - blau.jpg"
-            alt=""
-          />
-          <p class="text medium semibold">Text</p>
-          <p class="text large semibold">55$</p>
-        </div>
-        <div class="product_item">
-          <img
-            class="product_img"
-            src="./images/products/crossing red street - rot.jpg"
-            alt=""
-          />
-          <p class="text medium semibold">Text</p>
-          <p class="text large semibold">55$</p>
-        </div>
-        <div class="product_item">
-          <img
-            class="product_img"
-            src="./images/products/bingo - navy.jpg"
-            alt=""
-          />
-          <p class="text medium semibold">Text</p>
-          <p class="text large semibold">55$</p>
-        </div>
-      </div>
-    </div>
-    <!-- large img with quote  -->
-    <div class="container">
-      <div class="img-quote_wrapper">
-        <img class="img-quote" src="images/3.jpg" alt="" />
-        <h2>"I'm not high, I'm just really tall."</h2>
-      </div>
-    </div>
-    <!-- footer -->
-    <div class="container">
-      <div class="footer_wrapper">
-        <!-- footer top -->
-        <div class="footer_top">
-          <!-- footer left section -->
-          <div class="footer_left">
-            <a class="logo" href="">Stoner Studios</a>
-            <p>
-              Join our newsletter to stay up to date on features and releases.
+    <div id="navbar-container"></div>
+    <div id="content" style="display: none">
+      <!-- hero section-->
+      <div class="container">
+        <div class="hero_wrapper">
+          <h1>
+            Discover exclusive t-shirts from <br />
+            Stoner Studios
+          </h1>
+          <div class="margin-small-top">
+            <p class="text medium">
+              Get ready to elevate your style with our limited edition t-shirts.
             </p>
-            <form class="footer-form_wrapper" action="">
+          </div>
+          <!-- two images with links -->
+          <div class="two-images_grid">
+            <a class="image_link" href="products.html">
+              <img class="hero_img" src="./images/2.jpg" alt="Stoner" />
+              <h3>Collections</h3>
+            </a>
+            <a class="image_link">
+              <img class="hero_img" src="./images/17.jpg" alt="stoner_man" />
+              <h3>About us</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- products section -->
+      <div class="container">
+        <div class="product_wrapper">
+          <!-- products heading -->
+          <div class="text_button_wrapper">
+            <div class="flex_column">
+              <h2>Products</h2>
+              <p>Discover our latest collection of exclusive t-shirts.</p>
+            </div>
+            <a href="products.html"><button>View all</button></a>
+          </div>
+        </div>
+
+        <!-- products items -->
+
+        <div class="random-product-list" id="random-product-container"></div>
+      </div>
+      <!-- large img with quote  -->
+      <div class="container">
+        <div class="img-quote_wrapper">
+          <img class="img-quote" src="images/3.jpg" alt="" />
+          <h2>"I'm not high, I'm just really tall."</h2>
+        </div>
+      </div>
+      <div id="footer-container"></div>
+      <!-- Game -->
+
+      <section>
+        <span class="overlay"></span>
+
+        <div class="modal-box">
+          <i class="fa-regular fa-circle-check"></i>
+          <div class="buttons">
+            <button class="close-btn">x</button>
+          </div>
+          <h2>Play Game</h2>
+          <h3>and get 10% off your next purchase</h3>
+          <div class="wrapper">
+            <ul class="cards">
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-1.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-6.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-3.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-2.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-1.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-5.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-2.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-6.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-3.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-4.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-5.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-4.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-4.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-4.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-4.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/short_logo.png" alt="icon" />
+                </div>
+                <div class="view back-view">
+                  <img
+                    src="images/img-4.png"
+                    style="filter: none"
+                    alt="card-img"
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="winning-message" style="display: none">
+            <h2>Congratulations!</h2>
+            <h3>You have matched all the cards</h3>
+            <p>
+              Please sign up for the newsletter and receive a 10% discount on
+              your next purchase.
+            </p>
+
+            <form class="modal-box_wrapper" id="formContainer">
               <input
-                class="input footer-form-input1"
+                class="modal-box-input1"
                 type="text"
                 id="surname"
                 name="surname"
                 placeholder="Surname"
               />
               <input
-                class="input footer-form-input2"
+                class="modal-box-input2"
                 type="text"
-                id="surname"
+                id="name"
                 name="name"
                 placeholder="Name"
               />
-
               <input
-                class="input email_input footer-form-input3"
+                class="email_input modal-box-input3"
                 type="text"
-                id="email-footer"
+                id="email"
                 name="email"
                 placeholder="E-Mail"
               />
-              <button class="btn-secondary footer-form-input4">Submit</button>
+              <div class="subscribe-container">
+                <button class="btn-secondary button" type="submit" id="submit">
+                  Subscribe
+                </button>
+              </div>
             </form>
-            <p>
-              By subscribing you agree to with our Privacy Policy and provide
-              consent to receive updates from our company.
-            </p>
-          </div>
-          <!-- footer right section -->
-          <div class="footer_right">
-            <p class="text regular semibold">Follow Us</p>
-            <a class="link" href=""
-              ><svg
-                class="social_icon"
-                width=" 100%"
-                height=" 100%"
-                viewBox="0 0 25 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M22.6665 12.3038C22.6665 6.74719 18.1894 2.24268 12.6665 2.24268C7.14365 2.24268 2.6665 6.74719 2.6665 12.3038C2.6665 17.3255 6.32334 21.4879 11.104 22.2427V15.2121H8.56494V12.3038H11.104V10.0872C11.104 7.56564 12.597 6.1728 14.8811 6.1728C15.9753 6.1728 17.1196 6.36931 17.1196 6.36931V8.84529H15.8587C14.6165 8.84529 14.229 9.6209 14.229 10.4166V12.3038H17.0024L16.5591 15.2121H14.229V22.2427C19.0097 21.4879 22.6665 17.3257 22.6665 12.3038Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M22.6665 12.3038C22.6665 6.74719 18.1894 2.24268 12.6665 2.24268C7.14365 2.24268 2.6665 6.74719 2.6665 12.3038C2.6665 17.3255 6.32334 21.4879 11.104 22.2427V15.2121H8.56494V12.3038H11.104V10.0872C11.104 7.56564 12.597 6.1728 14.8811 6.1728C15.9753 6.1728 17.1196 6.36931 17.1196 6.36931V8.84529H15.8587C14.6165 8.84529 14.229 9.6209 14.229 10.4166V12.3038H17.0024L16.5591 15.2121H14.229V22.2427C19.0097 21.4879 22.6665 17.3257 22.6665 12.3038Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M22.6665 12.3038C22.6665 6.74719 18.1894 2.24268 12.6665 2.24268C7.14365 2.24268 2.6665 6.74719 2.6665 12.3038C2.6665 17.3255 6.32334 21.4879 11.104 22.2427V15.2121H8.56494V12.3038H11.104V10.0872C11.104 7.56564 12.597 6.1728 14.8811 6.1728C15.9753 6.1728 17.1196 6.36931 17.1196 6.36931V8.84529H15.8587C14.6165 8.84529 14.229 9.6209 14.229 10.4166V12.3038H17.0024L16.5591 15.2121H14.229V22.2427C19.0097 21.4879 22.6665 17.3257 22.6665 12.3038Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M22.6665 12.3038C22.6665 6.74719 18.1894 2.24268 12.6665 2.24268C7.14365 2.24268 2.6665 6.74719 2.6665 12.3038C2.6665 17.3255 6.32334 21.4879 11.104 22.2427V15.2121H8.56494V12.3038H11.104V10.0872C11.104 7.56564 12.597 6.1728 14.8811 6.1728C15.9753 6.1728 17.1196 6.36931 17.1196 6.36931V8.84529H15.8587C14.6165 8.84529 14.229 9.6209 14.229 10.4166V12.3038H17.0024L16.5591 15.2121H14.229V22.2427C19.0097 21.4879 22.6665 17.3257 22.6665 12.3038Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M22.6665 12.3038C22.6665 6.74719 18.1894 2.24268 12.6665 2.24268C7.14365 2.24268 2.6665 6.74719 2.6665 12.3038C2.6665 17.3255 6.32334 21.4879 11.104 22.2427V15.2121H8.56494V12.3038H11.104V10.0872C11.104 7.56564 12.597 6.1728 14.8811 6.1728C15.9753 6.1728 17.1196 6.36931 17.1196 6.36931V8.84529H15.8587C14.6165 8.84529 14.229 9.6209 14.229 10.4166V12.3038H17.0024L16.5591 15.2121H14.229V22.2427C19.0097 21.4879 22.6665 17.3257 22.6665 12.3038Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M22.6665 12.3038C22.6665 6.74719 18.1894 2.24268 12.6665 2.24268C7.14365 2.24268 2.6665 6.74719 2.6665 12.3038C2.6665 17.3255 6.32334 21.4879 11.104 22.2427V15.2121H8.56494V12.3038H11.104V10.0872C11.104 7.56564 12.597 6.1728 14.8811 6.1728C15.9753 6.1728 17.1196 6.36931 17.1196 6.36931V8.84529H15.8587C14.6165 8.84529 14.229 9.6209 14.229 10.4166V12.3038H17.0024L16.5591 15.2121H14.229V22.2427C19.0097 21.4879 22.6665 17.3257 22.6665 12.3038Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M22.6665 12.3038C22.6665 6.74719 18.1894 2.24268 12.6665 2.24268C7.14365 2.24268 2.6665 6.74719 2.6665 12.3038C2.6665 17.3255 6.32334 21.4879 11.104 22.2427V15.2121H8.56494V12.3038H11.104V10.0872C11.104 7.56564 12.597 6.1728 14.8811 6.1728C15.9753 6.1728 17.1196 6.36931 17.1196 6.36931V8.84529H15.8587C14.6165 8.84529 14.229 9.6209 14.229 10.4166V12.3038H17.0024L16.5591 15.2121H14.229V22.2427C19.0097 21.4879 22.6665 17.3257 22.6665 12.3038Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M22.6665 12.3038C22.6665 6.74719 18.1894 2.24268 12.6665 2.24268C7.14365 2.24268 2.6665 6.74719 2.6665 12.3038C2.6665 17.3255 6.32334 21.4879 11.104 22.2427V15.2121H8.56494V12.3038H11.104V10.0872C11.104 7.56564 12.597 6.1728 14.8811 6.1728C15.9753 6.1728 17.1196 6.36931 17.1196 6.36931V8.84529H15.8587C14.6165 8.84529 14.229 9.6209 14.229 10.4166V12.3038H17.0024L16.5591 15.2121H14.229V22.2427C19.0097 21.4879 22.6665 17.3257 22.6665 12.3038Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M22.6665 12.3038C22.6665 6.74719 18.1894 2.24268 12.6665 2.24268C7.14365 2.24268 2.6665 6.74719 2.6665 12.3038C2.6665 17.3255 6.32334 21.4879 11.104 22.2427V15.2121H8.56494V12.3038H11.104V10.0872C11.104 7.56564 12.597 6.1728 14.8811 6.1728C15.9753 6.1728 17.1196 6.36931 17.1196 6.36931V8.84529H15.8587C14.6165 8.84529 14.229 9.6209 14.229 10.4166V12.3038H17.0024L16.5591 15.2121H14.229V22.2427C19.0097 21.4879 22.6665 17.3257 22.6665 12.3038Z"
-                  fill="currentColor"
-                />
-              </svg>
-
-              Facebook</a
-            >
-            <a class="link" href=""
-              ><svg
-                class="social_icon"
-                width=" 100%"
-                height=" 100%"
-                viewBox="0 0 25 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M16.6665 3.24268H8.6665C5.90508 3.24268 3.6665 5.48126 3.6665 8.24268V16.2427C3.6665 19.0041 5.90508 21.2427 8.6665 21.2427H16.6665C19.4279 21.2427 21.6665 19.0041 21.6665 16.2427V8.24268C21.6665 5.48126 19.4279 3.24268 16.6665 3.24268ZM19.9165 16.2427C19.911 18.0353 18.4591 19.4872 16.6665 19.4927H8.6665C6.87385 19.4872 5.42199 18.0353 5.4165 16.2427V8.24268C5.42199 6.45003 6.87385 4.99817 8.6665 4.99268H16.6665C18.4591 4.99817 19.911 6.45003 19.9165 8.24268V16.2427ZM17.4165 8.49268C17.9688 8.49268 18.4165 8.04496 18.4165 7.49268C18.4165 6.9404 17.9688 6.49268 17.4165 6.49268C16.8642 6.49268 16.4165 6.9404 16.4165 7.49268C16.4165 8.04496 16.8642 8.49268 17.4165 8.49268ZM12.6665 7.74268C10.1812 7.74268 8.1665 9.7574 8.1665 12.2427C8.1665 14.728 10.1812 16.7427 12.6665 16.7427C15.1518 16.7427 17.1665 14.728 17.1665 12.2427C17.1692 11.0484 16.6959 9.90225 15.8514 9.05776C15.0069 8.21327 13.8608 7.74002 12.6665 7.74268ZM9.9165 12.2427C9.9165 13.7615 11.1477 14.9927 12.6665 14.9927C14.1853 14.9927 15.4165 13.7615 15.4165 12.2427C15.4165 10.7239 14.1853 9.49268 12.6665 9.49268C11.1477 9.49268 9.9165 10.7239 9.9165 12.2427Z"
-                  fill="currentColor"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M16.6665 3.24268H8.6665C5.90508 3.24268 3.6665 5.48126 3.6665 8.24268V16.2427C3.6665 19.0041 5.90508 21.2427 8.6665 21.2427H16.6665C19.4279 21.2427 21.6665 19.0041 21.6665 16.2427V8.24268C21.6665 5.48126 19.4279 3.24268 16.6665 3.24268ZM19.9165 16.2427C19.911 18.0353 18.4591 19.4872 16.6665 19.4927H8.6665C6.87385 19.4872 5.42199 18.0353 5.4165 16.2427V8.24268C5.42199 6.45003 6.87385 4.99817 8.6665 4.99268H16.6665C18.4591 4.99817 19.911 6.45003 19.9165 8.24268V16.2427ZM17.4165 8.49268C17.9688 8.49268 18.4165 8.04496 18.4165 7.49268C18.4165 6.9404 17.9688 6.49268 17.4165 6.49268C16.8642 6.49268 16.4165 6.9404 16.4165 7.49268C16.4165 8.04496 16.8642 8.49268 17.4165 8.49268ZM12.6665 7.74268C10.1812 7.74268 8.1665 9.7574 8.1665 12.2427C8.1665 14.728 10.1812 16.7427 12.6665 16.7427C15.1518 16.7427 17.1665 14.728 17.1665 12.2427C17.1692 11.0484 16.6959 9.90225 15.8514 9.05776C15.0069 8.21327 13.8608 7.74002 12.6665 7.74268ZM9.9165 12.2427C9.9165 13.7615 11.1477 14.9927 12.6665 14.9927C14.1853 14.9927 15.4165 13.7615 15.4165 12.2427C15.4165 10.7239 14.1853 9.49268 12.6665 9.49268C11.1477 9.49268 9.9165 10.7239 9.9165 12.2427Z"
-                  fill="currentColor"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M16.6665 3.24268H8.6665C5.90508 3.24268 3.6665 5.48126 3.6665 8.24268V16.2427C3.6665 19.0041 5.90508 21.2427 8.6665 21.2427H16.6665C19.4279 21.2427 21.6665 19.0041 21.6665 16.2427V8.24268C21.6665 5.48126 19.4279 3.24268 16.6665 3.24268ZM19.9165 16.2427C19.911 18.0353 18.4591 19.4872 16.6665 19.4927H8.6665C6.87385 19.4872 5.42199 18.0353 5.4165 16.2427V8.24268C5.42199 6.45003 6.87385 4.99817 8.6665 4.99268H16.6665C18.4591 4.99817 19.911 6.45003 19.9165 8.24268V16.2427ZM17.4165 8.49268C17.9688 8.49268 18.4165 8.04496 18.4165 7.49268C18.4165 6.9404 17.9688 6.49268 17.4165 6.49268C16.8642 6.49268 16.4165 6.9404 16.4165 7.49268C16.4165 8.04496 16.8642 8.49268 17.4165 8.49268ZM12.6665 7.74268C10.1812 7.74268 8.1665 9.7574 8.1665 12.2427C8.1665 14.728 10.1812 16.7427 12.6665 16.7427C15.1518 16.7427 17.1665 14.728 17.1665 12.2427C17.1692 11.0484 16.6959 9.90225 15.8514 9.05776C15.0069 8.21327 13.8608 7.74002 12.6665 7.74268ZM9.9165 12.2427C9.9165 13.7615 11.1477 14.9927 12.6665 14.9927C14.1853 14.9927 15.4165 13.7615 15.4165 12.2427C15.4165 10.7239 14.1853 9.49268 12.6665 9.49268C11.1477 9.49268 9.9165 10.7239 9.9165 12.2427Z"
-                  fill="currentColor"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M16.6665 3.24268H8.6665C5.90508 3.24268 3.6665 5.48126 3.6665 8.24268V16.2427C3.6665 19.0041 5.90508 21.2427 8.6665 21.2427H16.6665C19.4279 21.2427 21.6665 19.0041 21.6665 16.2427V8.24268C21.6665 5.48126 19.4279 3.24268 16.6665 3.24268ZM19.9165 16.2427C19.911 18.0353 18.4591 19.4872 16.6665 19.4927H8.6665C6.87385 19.4872 5.42199 18.0353 5.4165 16.2427V8.24268C5.42199 6.45003 6.87385 4.99817 8.6665 4.99268H16.6665C18.4591 4.99817 19.911 6.45003 19.9165 8.24268V16.2427ZM17.4165 8.49268C17.9688 8.49268 18.4165 8.04496 18.4165 7.49268C18.4165 6.9404 17.9688 6.49268 17.4165 6.49268C16.8642 6.49268 16.4165 6.9404 16.4165 7.49268C16.4165 8.04496 16.8642 8.49268 17.4165 8.49268ZM12.6665 7.74268C10.1812 7.74268 8.1665 9.7574 8.1665 12.2427C8.1665 14.728 10.1812 16.7427 12.6665 16.7427C15.1518 16.7427 17.1665 14.728 17.1665 12.2427C17.1692 11.0484 16.6959 9.90225 15.8514 9.05776C15.0069 8.21327 13.8608 7.74002 12.6665 7.74268ZM9.9165 12.2427C9.9165 13.7615 11.1477 14.9927 12.6665 14.9927C14.1853 14.9927 15.4165 13.7615 15.4165 12.2427C15.4165 10.7239 14.1853 9.49268 12.6665 9.49268C11.1477 9.49268 9.9165 10.7239 9.9165 12.2427Z"
-                  fill="currentColor"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M16.6665 3.24268H8.6665C5.90508 3.24268 3.6665 5.48126 3.6665 8.24268V16.2427C3.6665 19.0041 5.90508 21.2427 8.6665 21.2427H16.6665C19.4279 21.2427 21.6665 19.0041 21.6665 16.2427V8.24268C21.6665 5.48126 19.4279 3.24268 16.6665 3.24268ZM19.9165 16.2427C19.911 18.0353 18.4591 19.4872 16.6665 19.4927H8.6665C6.87385 19.4872 5.42199 18.0353 5.4165 16.2427V8.24268C5.42199 6.45003 6.87385 4.99817 8.6665 4.99268H16.6665C18.4591 4.99817 19.911 6.45003 19.9165 8.24268V16.2427ZM17.4165 8.49268C17.9688 8.49268 18.4165 8.04496 18.4165 7.49268C18.4165 6.9404 17.9688 6.49268 17.4165 6.49268C16.8642 6.49268 16.4165 6.9404 16.4165 7.49268C16.4165 8.04496 16.8642 8.49268 17.4165 8.49268ZM12.6665 7.74268C10.1812 7.74268 8.1665 9.7574 8.1665 12.2427C8.1665 14.728 10.1812 16.7427 12.6665 16.7427C15.1518 16.7427 17.1665 14.728 17.1665 12.2427C17.1692 11.0484 16.6959 9.90225 15.8514 9.05776C15.0069 8.21327 13.8608 7.74002 12.6665 7.74268ZM9.9165 12.2427C9.9165 13.7615 11.1477 14.9927 12.6665 14.9927C14.1853 14.9927 15.4165 13.7615 15.4165 12.2427C15.4165 10.7239 14.1853 9.49268 12.6665 9.49268C11.1477 9.49268 9.9165 10.7239 9.9165 12.2427Z"
-                  fill="currentColor"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M16.6665 3.24268H8.6665C5.90508 3.24268 3.6665 5.48126 3.6665 8.24268V16.2427C3.6665 19.0041 5.90508 21.2427 8.6665 21.2427H16.6665C19.4279 21.2427 21.6665 19.0041 21.6665 16.2427V8.24268C21.6665 5.48126 19.4279 3.24268 16.6665 3.24268ZM19.9165 16.2427C19.911 18.0353 18.4591 19.4872 16.6665 19.4927H8.6665C6.87385 19.4872 5.42199 18.0353 5.4165 16.2427V8.24268C5.42199 6.45003 6.87385 4.99817 8.6665 4.99268H16.6665C18.4591 4.99817 19.911 6.45003 19.9165 8.24268V16.2427ZM17.4165 8.49268C17.9688 8.49268 18.4165 8.04496 18.4165 7.49268C18.4165 6.9404 17.9688 6.49268 17.4165 6.49268C16.8642 6.49268 16.4165 6.9404 16.4165 7.49268C16.4165 8.04496 16.8642 8.49268 17.4165 8.49268ZM12.6665 7.74268C10.1812 7.74268 8.1665 9.7574 8.1665 12.2427C8.1665 14.728 10.1812 16.7427 12.6665 16.7427C15.1518 16.7427 17.1665 14.728 17.1665 12.2427C17.1692 11.0484 16.6959 9.90225 15.8514 9.05776C15.0069 8.21327 13.8608 7.74002 12.6665 7.74268ZM9.9165 12.2427C9.9165 13.7615 11.1477 14.9927 12.6665 14.9927C14.1853 14.9927 15.4165 13.7615 15.4165 12.2427C15.4165 10.7239 14.1853 9.49268 12.6665 9.49268C11.1477 9.49268 9.9165 10.7239 9.9165 12.2427Z"
-                  fill="currentColor"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M16.6665 3.24268H8.6665C5.90508 3.24268 3.6665 5.48126 3.6665 8.24268V16.2427C3.6665 19.0041 5.90508 21.2427 8.6665 21.2427H16.6665C19.4279 21.2427 21.6665 19.0041 21.6665 16.2427V8.24268C21.6665 5.48126 19.4279 3.24268 16.6665 3.24268ZM19.9165 16.2427C19.911 18.0353 18.4591 19.4872 16.6665 19.4927H8.6665C6.87385 19.4872 5.42199 18.0353 5.4165 16.2427V8.24268C5.42199 6.45003 6.87385 4.99817 8.6665 4.99268H16.6665C18.4591 4.99817 19.911 6.45003 19.9165 8.24268V16.2427ZM17.4165 8.49268C17.9688 8.49268 18.4165 8.04496 18.4165 7.49268C18.4165 6.9404 17.9688 6.49268 17.4165 6.49268C16.8642 6.49268 16.4165 6.9404 16.4165 7.49268C16.4165 8.04496 16.8642 8.49268 17.4165 8.49268ZM12.6665 7.74268C10.1812 7.74268 8.1665 9.7574 8.1665 12.2427C8.1665 14.728 10.1812 16.7427 12.6665 16.7427C15.1518 16.7427 17.1665 14.728 17.1665 12.2427C17.1692 11.0484 16.6959 9.90225 15.8514 9.05776C15.0069 8.21327 13.8608 7.74002 12.6665 7.74268ZM9.9165 12.2427C9.9165 13.7615 11.1477 14.9927 12.6665 14.9927C14.1853 14.9927 15.4165 13.7615 15.4165 12.2427C15.4165 10.7239 14.1853 9.49268 12.6665 9.49268C11.1477 9.49268 9.9165 10.7239 9.9165 12.2427Z"
-                  fill="currentColor"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M16.6665 3.24268H8.6665C5.90508 3.24268 3.6665 5.48126 3.6665 8.24268V16.2427C3.6665 19.0041 5.90508 21.2427 8.6665 21.2427H16.6665C19.4279 21.2427 21.6665 19.0041 21.6665 16.2427V8.24268C21.6665 5.48126 19.4279 3.24268 16.6665 3.24268ZM19.9165 16.2427C19.911 18.0353 18.4591 19.4872 16.6665 19.4927H8.6665C6.87385 19.4872 5.42199 18.0353 5.4165 16.2427V8.24268C5.42199 6.45003 6.87385 4.99817 8.6665 4.99268H16.6665C18.4591 4.99817 19.911 6.45003 19.9165 8.24268V16.2427ZM17.4165 8.49268C17.9688 8.49268 18.4165 8.04496 18.4165 7.49268C18.4165 6.9404 17.9688 6.49268 17.4165 6.49268C16.8642 6.49268 16.4165 6.9404 16.4165 7.49268C16.4165 8.04496 16.8642 8.49268 17.4165 8.49268ZM12.6665 7.74268C10.1812 7.74268 8.1665 9.7574 8.1665 12.2427C8.1665 14.728 10.1812 16.7427 12.6665 16.7427C15.1518 16.7427 17.1665 14.728 17.1665 12.2427C17.1692 11.0484 16.6959 9.90225 15.8514 9.05776C15.0069 8.21327 13.8608 7.74002 12.6665 7.74268ZM9.9165 12.2427C9.9165 13.7615 11.1477 14.9927 12.6665 14.9927C14.1853 14.9927 15.4165 13.7615 15.4165 12.2427C15.4165 10.7239 14.1853 9.49268 12.6665 9.49268C11.1477 9.49268 9.9165 10.7239 9.9165 12.2427Z"
-                  fill="currentColor"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M16.6665 3.24268H8.6665C5.90508 3.24268 3.6665 5.48126 3.6665 8.24268V16.2427C3.6665 19.0041 5.90508 21.2427 8.6665 21.2427H16.6665C19.4279 21.2427 21.6665 19.0041 21.6665 16.2427V8.24268C21.6665 5.48126 19.4279 3.24268 16.6665 3.24268ZM19.9165 16.2427C19.911 18.0353 18.4591 19.4872 16.6665 19.4927H8.6665C6.87385 19.4872 5.42199 18.0353 5.4165 16.2427V8.24268C5.42199 6.45003 6.87385 4.99817 8.6665 4.99268H16.6665C18.4591 4.99817 19.911 6.45003 19.9165 8.24268V16.2427ZM17.4165 8.49268C17.9688 8.49268 18.4165 8.04496 18.4165 7.49268C18.4165 6.9404 17.9688 6.49268 17.4165 6.49268C16.8642 6.49268 16.4165 6.9404 16.4165 7.49268C16.4165 8.04496 16.8642 8.49268 17.4165 8.49268ZM12.6665 7.74268C10.1812 7.74268 8.1665 9.7574 8.1665 12.2427C8.1665 14.728 10.1812 16.7427 12.6665 16.7427C15.1518 16.7427 17.1665 14.728 17.1665 12.2427C17.1692 11.0484 16.6959 9.90225 15.8514 9.05776C15.0069 8.21327 13.8608 7.74002 12.6665 7.74268ZM9.9165 12.2427C9.9165 13.7615 11.1477 14.9927 12.6665 14.9927C14.1853 14.9927 15.4165 13.7615 15.4165 12.2427C15.4165 10.7239 14.1853 9.49268 12.6665 9.49268C11.1477 9.49268 9.9165 10.7239 9.9165 12.2427Z"
-                  fill="currentColor"
-                />
-              </svg>
-
-              Instagram
-            </a>
-            <a class="link" href=""
-              ><svg
-                class="social_icon"
-                width=" 100%"
-                height=" 100%"
-                viewBox="0 0 25 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17.8426 4.24268H20.6027L14.5726 11.0201L21.6665 20.2427H16.1121L11.7616 14.6493L6.78373 20.2427H4.02194L10.4717 12.9935L3.6665 4.24268H9.36195L13.2944 9.3553L17.8426 4.24268ZM16.8738 18.6181H18.4033L8.53091 5.78196H6.8897L16.8738 18.6181Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M17.8426 4.24268H20.6027L14.5726 11.0201L21.6665 20.2427H16.1121L11.7616 14.6493L6.78373 20.2427H4.02194L10.4717 12.9935L3.6665 4.24268H9.36195L13.2944 9.3553L17.8426 4.24268ZM16.8738 18.6181H18.4033L8.53091 5.78196H6.8897L16.8738 18.6181Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M17.8426 4.24268H20.6027L14.5726 11.0201L21.6665 20.2427H16.1121L11.7616 14.6493L6.78373 20.2427H4.02194L10.4717 12.9935L3.6665 4.24268H9.36195L13.2944 9.3553L17.8426 4.24268ZM16.8738 18.6181H18.4033L8.53091 5.78196H6.8897L16.8738 18.6181Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M17.8426 4.24268H20.6027L14.5726 11.0201L21.6665 20.2427H16.1121L11.7616 14.6493L6.78373 20.2427H4.02194L10.4717 12.9935L3.6665 4.24268H9.36195L13.2944 9.3553L17.8426 4.24268ZM16.8738 18.6181H18.4033L8.53091 5.78196H6.8897L16.8738 18.6181Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M17.8426 4.24268H20.6027L14.5726 11.0201L21.6665 20.2427H16.1121L11.7616 14.6493L6.78373 20.2427H4.02194L10.4717 12.9935L3.6665 4.24268H9.36195L13.2944 9.3553L17.8426 4.24268ZM16.8738 18.6181H18.4033L8.53091 5.78196H6.8897L16.8738 18.6181Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M17.8426 4.24268H20.6027L14.5726 11.0201L21.6665 20.2427H16.1121L11.7616 14.6493L6.78373 20.2427H4.02194L10.4717 12.9935L3.6665 4.24268H9.36195L13.2944 9.3553L17.8426 4.24268ZM16.8738 18.6181H18.4033L8.53091 5.78196H6.8897L16.8738 18.6181Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M17.8426 4.24268H20.6027L14.5726 11.0201L21.6665 20.2427H16.1121L11.7616 14.6493L6.78373 20.2427H4.02194L10.4717 12.9935L3.6665 4.24268H9.36195L13.2944 9.3553L17.8426 4.24268ZM16.8738 18.6181H18.4033L8.53091 5.78196H6.8897L16.8738 18.6181Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M17.8426 4.24268H20.6027L14.5726 11.0201L21.6665 20.2427H16.1121L11.7616 14.6493L6.78373 20.2427H4.02194L10.4717 12.9935L3.6665 4.24268H9.36195L13.2944 9.3553L17.8426 4.24268ZM16.8738 18.6181H18.4033L8.53091 5.78196H6.8897L16.8738 18.6181Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M17.8426 4.24268H20.6027L14.5726 11.0201L21.6665 20.2427H16.1121L11.7616 14.6493L6.78373 20.2427H4.02194L10.4717 12.9935L3.6665 4.24268H9.36195L13.2944 9.3553L17.8426 4.24268ZM16.8738 18.6181H18.4033L8.53091 5.78196H6.8897L16.8738 18.6181Z"
-                  fill="currentColor"
-                />
-              </svg>
-              X</a
-            >
           </div>
         </div>
-
-        <!-- footer bottom -->
-        <p>
-          Wir stellen hiermit klar, dass diese Webseite ausschliesslich ein
-          Schulprojekt ist. (Mariana, Kyra, Rafael)
-        </p>
-        <div class="footer_bottom">
-          <p>© 2023 Stoner Studios. All rights reserved.</p>
-          <div class="footer_legal">
-            <a class="link" href="">Terms of Service</a>
-            <a class="link" href="">Privacy Policy</a>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
-    <!-- Game -->
-
-    <section>
-      <span class="overlay"></span>
-
-      <div class="modal-box">
-        <i class="fa-regular fa-circle-check"></i>
-        <div class="buttons">
-          <button class="close-btn">x</button>
-        </div>
-        <h2>Play Game</h2>
-        <h3>and get 10% off your next purchase</h3>
-        <div class="wrapper">
-          <ul class="cards">
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-1.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-6.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-3.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-2.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-1.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-5.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-2.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-6.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-3.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-4.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-5.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-4.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-4.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-4.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-4.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-            <li class="card">
-              <div class="view front-view">
-                <img src="images/short_logo.png" alt="icon" />
-              </div>
-              <div class="view back-view">
-                <img
-                  src="images/img-4.png"
-                  style="filter: none"
-                  alt="card-img"
-                />
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="winning-message" style="display: none">
-          <h2>Congratulations!</h2>
-          <h3>You have matched all the cards</h3>
-          <p>
-            Please sign up for the newsletter and receive a 10% discount on your
-            next purchase.
-          </p>
-
-          <form class="modal-box_wrapper" id="formContainer">
-            <input
-              class="modal-box-input1"
-              type="text"
-              id="surname"
-              name="surname"
-              placeholder="Surname"
-            />
-            <input
-              class="modal-box-input2"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-            />
-            <input
-              class="email_input modal-box-input3"
-              type="text"
-              id="email"
-              name="email"
-              placeholder="E-Mail"
-            />
-            <div class="subscribe-container">
-              <button class="btn-secondary button" type="submit" id="submit">
-                Subscribe
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
     <!-- Javascript -->
     <script src="./js/databaseClient.js"></script>
     <script src="./js/game.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/components.js"></script>
   </body>
 </html>
