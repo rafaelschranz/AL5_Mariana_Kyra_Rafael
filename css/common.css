@@ -368,10 +368,6 @@ form {
   position: relative;
 }
 
-.nav-items a.active {
-  background-color: #007bff; /* Blue background for the active link */
-  color: #fff; /* White text for the active link */
-}
 .nav-items a::after {
   content: "";
   position: absolute;
@@ -390,7 +386,12 @@ form {
   /* Show the underline when focused */
   transform: scaleX(1); /* Expand the underline to cover the text */
 }
-
+.nav-items a.active {
+  color: var(--color-alternate); /* White text for the active link */
+}
+.nav-items a.active::after {
+  transform: scaleX(0);
+}
 /* Responsive styles*/
 
 @media only screen and (max-width: 800px) {
