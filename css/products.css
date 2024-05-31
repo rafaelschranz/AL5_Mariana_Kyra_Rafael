@@ -16,9 +16,9 @@
   filter: grayscale(0%);
 }
 .collection-image {
- 
   object-fit: cover;
   border-radius: 8px;
+  height: 100%;
 }
 
 .collection-name {
@@ -59,20 +59,20 @@
 }
 @media only screen and (max-width: 900px) {
   .collection-item {
-  width: 50%;
-  padding: 2rem;
+    width: 50%;
+    padding: 2rem;
   }
-  .product-item{
+  .product-item {
     width: 50%;
   }
 }
 @media only screen and (max-width: 500px) {
   .collection-item {
-  width: 100%;
-  padding: 0rem;
-  margin-bottom: 2rem;
+    width: 100%;
+    padding: 0rem;
+    margin-bottom: 2rem;
   }
-  .product-item{
+  .product-item {
     width: 100%;
   }
 }

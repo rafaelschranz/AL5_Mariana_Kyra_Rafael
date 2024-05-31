@@ -181,7 +181,7 @@ form {
 
 /* navbar */
 .logo.center {
-  margin-left: -5rem;
+  margin-left: -12rem;
 }
 
 .logo {
@@ -368,6 +368,10 @@ form {
   position: relative;
 }
 
+.nav-items a.active {
+  background-color: #007bff; /* Blue background for the active link */
+  color: #fff; /* White text for the active link */
+}
 .nav-items a::after {
   content: "";
   position: absolute;
