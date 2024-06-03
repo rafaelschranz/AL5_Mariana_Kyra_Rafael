@@ -31,14 +31,20 @@ function includeFooter() {
 function setActiveLink() {
   const currentLocation = new URL(location.pathname, location.origin).pathname;
   const menuItems = document.querySelectorAll(".nav-link");
-  
+
   menuItems.forEach(menuItem => {
     const menuItemHref = new URL(menuItem.getAttribute("href"), location.origin).pathname;
-    if (menuItemHref === currentLocation) {
+
+    // Normalize both paths to ensure consistency
+    const normalizedCurrentLocation = currentLocation.replace(/\/$/, "");
+    const normalizedMenuItemHref = menuItemHref.replace(/\/$/, "");
+
+    if (normalizedMenuItemHref === normalizedCurrentLocation) {
       menuItem.classList.add("active");
     }
   });
 }
+
 
 
 // Call the functions to include the navbar and footer when the page loads
