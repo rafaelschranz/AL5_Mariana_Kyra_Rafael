@@ -167,36 +167,24 @@ function hideErrorMessage(elementId) {
 }
 
 async function onClickSubmit() {
-  showSpinner(); // Show spinner while submitting
-
-  try {
-    await databaseClient.insertInto("user", {
-      email: emailField.value,
-      surname: surnameField.value,
-      name: nameField.value,
-    });
-
-    // If insertion is successful, hide spinner and show success message
-    hideSpinner();
-    showSuccessMessage();
-    formContainer.classList.add("hidden");
-  } catch (error) {
-    // If an error occurs during insertion
-    hideSpinner();
-    if (error.code === "ER_DUP_ENTRY") {
-      // If the error code indicates duplicate entry, show the corresponding error message
-      showDuplicateEmailError();
-    } else {
-      // For other errors, show a generic error message
-      showErrorMessage("generic-error", "An error occurred. Please try again.");
-    }
-  }
+  await databaseClient.insertInto("user", {
+    email: emailField.value,
+    surname: surnameField.value,
+    name: nameField.value,
+  });
+  hideSpinner();
+  showSuccessMessage();
+  formContainer.classList.add("hidden");
 }
 
-function showDuplicateEmailError() {
-  const errorMessage =
-    "Oops! Looks like that email has already been used. Please try another one.";
-  showErrorMessage("email-error", errorMessage);
+function showSpinner() {
+  spinner.style.display = "block";
 }
 
-// Assuming you have an error message element with an ID of 'email-error' for email-related errors
+function hideSpinner() {
+  spinner.style.display = "none";
+}
+
+function showSuccessMessage() {
+  successMessage.style.display = "block";
+}
