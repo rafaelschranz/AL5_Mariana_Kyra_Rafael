@@ -93,25 +93,82 @@ cards.forEach((card) => {
 
 //send Data to Database
 
-// (1) Variablen initialisieren
+// Variables
 const formContainer = document.getElementById("formContainer");
-const gameContainer = document.getElementById("game-container");
 const submitButton = document.getElementById("submit");
 const emailField = document.getElementById("email");
 const surnameField = document.getElementById("surname");
 const nameField = document.getElementById("name");
 
-// (2) Interaktionen festlegen
+// Event Listener for submit button
 submitButton.addEventListener("click", async (event) => {
   event.preventDefault();
-  onClickSubmit();
+  const isValid = validateForm();
+  if (isValid) {
+    await onClickSubmit();
+  }
 });
 
-const onClickSubmit = async () => {
-  // Speichert die Daten in der Datenbank
+// Validation Functions
+function validateForm() {
+  let isValid = true;
+
+  if (!validateEmail(emailField.value)) {
+    showErrorMessage("email-error", "Invalid email address.");
+    isValid = false;
+  } else {
+    hideErrorMessage("email-error");
+  }
+
+  if (!validateName(surnameField.value)) {
+    showErrorMessage(
+      "surname-error",
+      "Invalid surname. Only letters, hyphens, apostrophes, and spaces are allowed. Minimum 2, maximum 100 characters."
+    );
+    isValid = false;
+  } else {
+    hideErrorMessage("surname-error");
+  }
+
+  if (!validateName(nameField.value)) {
+    showErrorMessage(
+      "name-error",
+      "Invalid name. Only letters, hyphens, apostrophes, and spaces are allowed. Minimum 2, maximum 100 characters."
+    );
+    isValid = false;
+  } else {
+    hideErrorMessage("name-error");
+  }
+
+  return isValid;
+}
+
+function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function validateName(name) {
+  const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,100}$/;
+  return nameRegex.test(name.trim());
+}
+
+function showErrorMessage(elementId, message) {
+  const errorElement = document.getElementById(elementId);
+  errorElement.textContent = message;
+  errorElement.style.display = "block";
+}
+
+function hideErrorMessage(elementId) {
+  const errorElement = document.getElementById(elementId);
+  errorElement.style.display = "none";
+}
+
+async function onClickSubmit() {
   await databaseClient.insertInto("user", {
     email: emailField.value,
     surname: surnameField.value,
     name: nameField.value,
   });
-};
+  formContainer.classList.add("hidden");
+}
