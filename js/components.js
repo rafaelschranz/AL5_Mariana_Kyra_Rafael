@@ -1,7 +1,7 @@
 // Function to include the navbar component
 function includeNavbar() {
   // Fetch the navbar HTML file
-  fetch("../AL5_Mariana_Kyra_Rafael/components/navbar.html")
+  fetch("./components/navbar.html")
     .then((response) => response.text())
     .then((data) => {
       // Insert the navbar HTML into the navbar-container div
