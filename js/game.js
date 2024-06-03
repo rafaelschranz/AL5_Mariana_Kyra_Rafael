@@ -98,9 +98,10 @@ const formContainer = document.getElementById("formContainer");
 const gameContainer = document.getElementById("game-container");
 const submitButton = document.getElementById("submit");
 const emailField = document.getElementById("email");
+const surnameField = document.getElementById("surname");
+const nameField = document.getElementById("name");
 
-// (2) Interatkionen festlegen
-
+// (2) Interaktionen festlegen
 submitButton.addEventListener("click", async (event) => {
   event.preventDefault();
   onClickSubmit();
@@ -110,5 +111,7 @@ const onClickSubmit = async () => {
   // Speichert die Daten in der Datenbank
   await databaseClient.insertInto("user", {
     email: emailField.value,
+    surname: surnameField.value,
+    name: nameField.value,
   });
 };

@@ -99,7 +99,20 @@ h3 {
   font-weight: 500;
   line-height: 120%; /* 3rem */
 }
-
+h4 {
+  font-family: "LEMON MILK";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 2.6rem */
+}
+h5 {
+  font-family: "Apfel Grotezk";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.875rem */
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -368,10 +381,6 @@ form {
   position: relative;
 }
 
-.nav-items a.active {
-  background-color: #007bff; /* Blue background for the active link */
-  color: #fff; /* White text for the active link */
-}
 .nav-items a::after {
   content: "";
   position: absolute;
@@ -390,7 +399,12 @@ form {
   /* Show the underline when focused */
   transform: scaleX(1); /* Expand the underline to cover the text */
 }
-
+.nav-items a.active {
+  color: var(--color-alternate); /* White text for the active link */
+}
+.nav-items a.active::after {
+  transform: scaleX(0);
+}
 /* Responsive styles*/
 
 @media only screen and (max-width: 800px) {
@@ -510,6 +524,9 @@ form {
     font-size: 2rem;
   }
   h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
     font-size: 1.5rem;
   }
 }
