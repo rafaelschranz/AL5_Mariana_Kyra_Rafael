@@ -29,16 +29,17 @@ function includeFooter() {
     });
 }
 function setActiveLink() {
-  const currentLocation = location.pathname;
-  const menuItem = document.querySelectorAll(".nav-link");
-  const menuLength = menuItem.length;
-  for (let i = 0; i < menuLength; i++) {
-    console.log(currentLocation);
-    if (menuItem[i].getAttribute("href") === currentLocation) {
-      menuItem[i].classList.add("active");
+  const currentLocation = new URL(location.pathname, location.origin).pathname;
+  const menuItems = document.querySelectorAll(".nav-link");
+  
+  menuItems.forEach(menuItem => {
+    const menuItemHref = new URL(menuItem.getAttribute("href"), location.origin).pathname;
+    if (menuItemHref === currentLocation) {
+      menuItem.classList.add("active");
     }
-  }
+  });
 }
+
 
 // Call the functions to include the navbar and footer when the page loads
 window.onload = function () {
