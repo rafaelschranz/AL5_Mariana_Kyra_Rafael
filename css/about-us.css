@@ -1,15 +1,25 @@
+/*Variables*/
+:root {
+  --color-primary: black;
+  --color-secondary: white;
+  --color-alternate: #19619f;
+}
+
 .aboutus_hero_wrapper {
   background-image: url(../images/Team/rafaelschranz.jpg);
   background-size: cover;
   filter: grayscale(100%);
   filter: drop-shadow(50%);
-  height: 80vh;
+
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .hero_text {
   display: flex;
   align-content: center;
   text-align: center;
-  height: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -17,13 +27,18 @@
 .ourstory_wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 .centered_heading_wrapper {
   text-align: center;
   justify-content: center;
   align-content: center;
   gap: 1rem;
-  padding: 3rem;
+  padding: 0rem 8rem 0rem 8rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
 }
 .ourvalues_wrapper {
   text-align: center;
@@ -59,4 +74,21 @@
 .team_grid_item_image {
   height: 7rem;
   width: 7rem;
+}
+@media only screen and (max-width: 900px) {
+  .ourstory_wrapper {
+    grid-template-columns: 1fr;
+  }
+  .ourvalues_wrapper {
+  
+    grid-template-columns: 1fr;
+}
+
+  .team_wrapper {
+   
+    grid-template-columns:  1fr;
+  }
+  .centered_heading_wrapper {
+    padding: 0rem;
+  }
 }

@@ -368,7 +368,9 @@ form {
 .margin-small-top {
   margin-top: 2rem;
 }
-
+.margin-xsmall-top {
+  margin-top: 1rem;
+}
 .flex_column {
   display: flex;
   flex-direction: column;
@@ -432,7 +434,6 @@ form {
     display: inline-block;
     position: absolute;
     right: 0px;
-    top: 0px;
   }
   .nav > .nav-btn > label {
     display: inline-block;
@@ -510,6 +511,9 @@ form {
   }
   .margin-small-top {
     margin-top: 1rem;
+  }
+  .margin-xsmall-top {
+    margin-top: 0.5rem;
   }
 }
 
