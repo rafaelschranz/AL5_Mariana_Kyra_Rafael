@@ -184,6 +184,8 @@ async function onClickSubmit() {
         "email-error",
         "Oops! Looks like that email has already been used. Please try another one."
       );
+      // Ensure success message doesn't show up
+      successMessage.style.display = "none";
     } else {
       // Other database error
       hideSpinner();
