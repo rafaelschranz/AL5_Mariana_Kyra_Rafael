@@ -29,21 +29,26 @@ function includeFooter() {
     });
 }
 function setActiveLink() {
-  const currentLocation = new URL(location.pathname, location.origin).pathname;
+  // Get the current pathname considering the base URL of GitHub Pages
+  const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
+  const currentLocation = new URL(window.location.pathname, window.location.origin).pathname;
+  const normalizedCurrentLocation = currentLocation.replace(/\/$/, "");
+
   const menuItems = document.querySelectorAll(".nav-link");
 
   menuItems.forEach(menuItem => {
-    const menuItemHref = new URL(menuItem.getAttribute("href"), location.origin).pathname;
-
-    // Normalize both paths to ensure consistency
-    const normalizedCurrentLocation = currentLocation.replace(/\/$/, "");
+    const menuItemHref = new URL(menuItem.getAttribute("href"), window.location.origin).pathname;
     const normalizedMenuItemHref = menuItemHref.replace(/\/$/, "");
 
-    if (normalizedMenuItemHref === normalizedCurrentLocation) {
+    // If the base path exists, prepend it to the hrefs being compared
+    const finalMenuItemHref = basePath ? basePath + normalizedMenuItemHref : normalizedMenuItemHref;
+
+    if (finalMenuItemHref === normalizedCurrentLocation) {
       menuItem.classList.add("active");
     }
   });
 }
+
 
 
 
