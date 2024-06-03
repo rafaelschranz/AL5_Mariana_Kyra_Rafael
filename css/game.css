@@ -177,10 +177,10 @@ section.active .modal-box {
     width: 350px;
   }
   .card .front-view img {
-    width: 17px;
+    width: 35px;
   }
   .card .back-view img {
-    max-width: 40px;
+    max-width: 50px;
   }
 }
 @media screen and (max-width: 530px) {
@@ -189,10 +189,10 @@ section.active .modal-box {
     width: 300px;
   }
   .card .front-view img {
-    width: 15px;
+    width: 30px;
   }
   .card .back-view img {
-    max-width: 35px;
+    max-width: 40px;
   }
 }
 
