@@ -99,6 +99,7 @@ const submitButton = document.getElementById("submit");
 const emailField = document.getElementById("email");
 const surnameField = document.getElementById("surname");
 const nameField = document.getElementById("name");
+const successMessage = document.getElementById("success-message");
 
 // Event Listener for submit button
 submitButton.addEventListener("click", async (event) => {
