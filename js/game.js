@@ -178,20 +178,14 @@ async function onClickSubmit() {
     formContainer.classList.add("hidden");
   } catch (error) {
     if (error.code === "ER_DUP_ENTRY") {
-      // Email already exists in the database
-      hideSpinner();
       showErrorMessage(
         "email-error",
         "Oops! Looks like that email has already been used. Please try another one."
       );
-      // Ensure success message doesn't show up
-      successMessage.style.display = "none";
     } else {
-      // Other database error
-      hideSpinner();
+      // Handle other errors if needed
       console.error(error);
-      // You can display a generic error message here if needed
-      ("Subscription error. Please try again.");
     }
+    hideSpinner();
   }
 }
