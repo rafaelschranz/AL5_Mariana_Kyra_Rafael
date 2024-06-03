@@ -167,25 +167,24 @@ function hideErrorMessage(elementId) {
 }
 
 async function onClickSubmit() {
-  try {
-    await databaseClient.insertInto("user", {
-      email: emailField.value,
-      surname: surnameField.value,
-      name: nameField.value,
-    });
-    hideSpinner();
-    showSuccessMessage();
-    formContainer.classList.add("hidden");
-  } catch (error) {
-    if (error.code === "ER_DUP_ENTRY") {
-      showErrorMessage(
-        "email-error",
-        "Oops! Looks like that email has already been used. Please try another one."
-      );
-    } else {
-      // Handle other errors if needed
-      console.error(error);
-    }
-    hideSpinner();
-  }
+  await databaseClient.insertInto("user", {
+    email: emailField.value,
+    surname: surnameField.value,
+    name: nameField.value,
+  });
+  hideSpinner();
+  showSuccessMessage();
+  formContainer.classList.add("hidden");
+}
+
+function showSpinner() {
+  spinner.style.display = "block";
+}
+
+function hideSpinner() {
+  spinner.style.display = "none";
+}
+
+function showSuccessMessage() {
+  successMessage.style.display = "block";
 }
