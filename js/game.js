@@ -167,24 +167,29 @@ function hideErrorMessage(elementId) {
 }
 
 async function onClickSubmit() {
-  await databaseClient.insertInto("user", {
-    email: emailField.value,
-    surname: surnameField.value,
-    name: nameField.value,
-  });
-  hideSpinner();
-  showSuccessMessage();
-  formContainer.classList.add("hidden");
-}
-
-function showSpinner() {
-  spinner.style.display = "block";
-}
-
-function hideSpinner() {
-  spinner.style.display = "none";
-}
-
-function showSuccessMessage() {
-  successMessage.style.display = "block";
+  try {
+    await databaseClient.insertInto("user", {
+      email: emailField.value,
+      surname: surnameField.value,
+      name: nameField.value,
+    });
+    hideSpinner();
+    showSuccessMessage();
+    formContainer.classList.add("hidden");
+  } catch (error) {
+    if (error.code === "ER_DUP_ENTRY") {
+      // Email already exists in the database
+      hideSpinner();
+      showErrorMessage(
+        "email-error",
+        "Oops! Looks like that email has already been used. Please try another one."
+      );
+    } else {
+      // Other database error
+      hideSpinner();
+      console.error(error);
+      // You can display a generic error message here if needed
+      ("Subscription error. Please try again.");
+    }
+  }
 }
