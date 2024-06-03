@@ -451,7 +451,7 @@ form {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 92.6vw;
+    width: 104vw;
     background-color: var(--color-secondary);
     transition: all 0.3s ease-in;
     overflow-y: hidden;
