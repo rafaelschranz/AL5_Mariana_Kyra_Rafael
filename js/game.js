@@ -93,25 +93,51 @@ cards.forEach((card) => {
 
 //send Data to Database
 
-// Variables
-const formContainer = document.getElementById("formContainer");
-const submitButton = document.getElementById("submit");
-const emailField = document.getElementById("email");
-const surnameField = document.getElementById("surname");
-const nameField = document.getElementById("name");
-const successMessage = document.getElementById("success-message");
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector("section");
+  const overlay = document.querySelector(".overlay");
+  const closeBtn = document.querySelector(".close-btn");
 
-// Event Listener for submit button
-submitButton.addEventListener("click", async (event) => {
-  event.preventDefault();
-  const isValid = validateForm();
-  if (isValid) {
-    showSpinner();
-    await onClickSubmit();
+  function showPopup() {
+    section.classList.add("active");
   }
+
+  setTimeout(showPopup, 5000);
+
+  overlay.addEventListener("click", () => section.classList.remove("active"));
+  closeBtn.addEventListener("click", () => section.classList.remove("active"));
 });
 
-// Validation Functions
+async function onClickSubmit() {
+  try {
+    showSpinner();
+
+    const emailExists = await databaseClient.executeSqlQuery(
+      `SELECT * FROM user WHERE email='${emailField.value}'`
+    );
+
+    if (emailExists[1] && emailExists[1].length > 0) {
+      showErrorMessage("email-error", "Email already exists.");
+      hideSpinner();
+      return;
+    }
+
+    await databaseClient.insertInto("user", {
+      email: emailField.value,
+      surname: surnameField.value,
+      name: nameField.value,
+    });
+
+    hideSpinner();
+    showSuccessMessage();
+    formContainer.classList.add("hidden");
+  } catch (error) {
+    console.error("Error during form submission:", error);
+    hideSpinner();
+    showErrorMessage("form-error", "An error occurred. Please try again.");
+  }
+}
+
 function validateForm() {
   let isValid = true;
 
@@ -166,25 +192,29 @@ function hideErrorMessage(elementId) {
   errorElement.style.display = "none";
 }
 
-async function onClickSubmit() {
-  await databaseClient.insertInto("user", {
-    email: emailField.value,
-    surname: surnameField.value,
-    name: nameField.value,
-  });
-  hideSpinner();
-  showSuccessMessage();
-  formContainer.classList.add("hidden");
-}
-
 function showSpinner() {
-  spinner.style.display = "block";
+  document.getElementById("spinner").style.display = "block";
 }
 
 function hideSpinner() {
-  spinner.style.display = "none";
+  document.getElementById("spinner").style.display = "none";
 }
 
 function showSuccessMessage() {
   successMessage.style.display = "block";
 }
+
+const submitButton = document.getElementById("submit");
+const emailField = document.getElementById("email");
+const surnameField = document.getElementById("surname");
+const nameField = document.getElementById("name");
+const formContainer = document.getElementById("formContainer");
+const successMessage = document.getElementById("success-message");
+
+submitButton.addEventListener("click", async (event) => {
+  event.preventDefault();
+  const isValid = validateForm();
+  if (isValid) {
+    await onClickSubmit();
+  }
+});
