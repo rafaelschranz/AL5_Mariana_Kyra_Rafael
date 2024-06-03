@@ -105,6 +105,7 @@ submitButton.addEventListener("click", async (event) => {
   event.preventDefault();
   const isValid = validateForm();
   if (isValid) {
+    showSpinner();
     await onClickSubmit();
   }
 });
@@ -170,5 +171,19 @@ async function onClickSubmit() {
     surname: surnameField.value,
     name: nameField.value,
   });
+  hideSpinner();
+  showSuccessMessage();
   formContainer.classList.add("hidden");
+}
+
+function showSpinner() {
+  spinner.style.display = "block";
+}
+
+function hideSpinner() {
+  spinner.style.display = "none";
+}
+
+function showSuccessMessage() {
+  successMessage.style.display = "block";
 }
