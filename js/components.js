@@ -17,7 +17,7 @@ function includeNavbar() {
 // Function to include the footer component
 function includeFooter() {
   // Fetch the footer HTML file
-  fetch("../components/footer.html")
+  fetch("../AL5_Mariana_Kyra_Rafael/components/footer.html")
     .then((response) => response.text())
     .then((data) => {
       // Insert the footer HTML into the footer-container div

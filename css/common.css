@@ -99,7 +99,20 @@ h3 {
   font-weight: 500;
   line-height: 120%; /* 3rem */
 }
-
+h4 {
+  font-family: "LEMON MILK";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 2.6rem */
+}
+h5 {
+  font-family: "Apfel Grotezk";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.875rem */
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -511,6 +524,9 @@ form {
     font-size: 2rem;
   }
   h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
     font-size: 1.5rem;
   }
 }
