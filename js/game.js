@@ -18,8 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     section.classList.add("active");
   }
 
-  // Set a timeout to show the popup after 10 seconds
-  setTimeout(showPopup, 5000);
+  // Check if the form has been submitted before
+  if (!localStorage.getItem('formSubmitted')) {
+    // Set a timeout to show the popup after 10 seconds
+    setTimeout(showPopup, 5000);
+  }
 
   // Add event listeners to close the popup
   overlay.addEventListener("click", () => section.classList.remove("active"));
@@ -93,21 +96,6 @@ cards.forEach((card) => {
 
 //send Data to Database
 
-document.addEventListener("DOMContentLoaded", () => {
-  const section = document.querySelector("section");
-  const overlay = document.querySelector(".overlay");
-  const closeBtn = document.querySelector(".close-btn");
-
-  function showPopup() {
-    section.classList.add("active");
-  }
-
-  setTimeout(showPopup, 5000);
-
-  overlay.addEventListener("click", () => section.classList.remove("active"));
-  closeBtn.addEventListener("click", () => section.classList.remove("active"));
-});
-
 async function onClickSubmit() {
   try {
     showSpinner();
@@ -131,6 +119,9 @@ async function onClickSubmit() {
     hideSpinner();
     showSuccessMessage();
     formContainer.classList.add("hidden");
+
+    // Set form submitted flag in localStorage
+    localStorage.setItem('formSubmitted', 'true');
   } catch (error) {
     console.error("Error during form submission:", error);
     hideSpinner();

@@ -108,8 +108,11 @@
   --c2: white;
   --c3: white;
   --bg: var(--c3);
-  --d: 8000ms;
+  --d: 12000ms;
   --e: cubic-bezier(0.76, 0, 0.24, 1);
+
+  height: 50vh;
+  margin: 4rem 0rem 2rem 0rem;
   
   background-color: var(--bg);
   background-image:
