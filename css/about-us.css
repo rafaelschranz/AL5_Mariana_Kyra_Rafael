@@ -81,6 +81,14 @@
 .ourstory_img {
   max-height: 50rem;
 }
+
+.team_social_icon{
+  transition: color 0.3s;
+
+}
+.team_social_icon:hover{
+  color: var(--color-alternate);
+}
 @media only screen and (max-width: 900px) {
   .ourstory_wrapper {
     grid-template-columns: 1fr;
@@ -95,6 +103,9 @@
   .centered_heading_wrapper {
     padding: 0rem;
   }
+ .aboutus_hero_wrapper {
+  height: 90vh;
+ }
 }
 
 /* CSS background animation */
