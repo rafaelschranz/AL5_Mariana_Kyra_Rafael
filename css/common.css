@@ -175,6 +175,7 @@ form {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .text.regular {
@@ -277,6 +278,7 @@ form {
 
 .footer_bottom {
   margin-top: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -409,17 +411,19 @@ form {
 }
 /* Responsive styles*/
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   /*html elements*/
   .logo {
     font-size: 1.5rem;
   }
   h1 {
     font-size: 3rem;
+    word-wrap: break-word;
   }
   h2 {
     font-size: 2.5rem;
     margin: 0%;
+    word-wrap: break-word;
   }
   form {
     justify-content: center;
