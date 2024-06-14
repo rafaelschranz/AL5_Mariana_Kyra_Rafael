@@ -67,3 +67,4 @@ const displayRandomProducts = (randomProducts) => {
     randomProductContainer.appendChild(productItem);
   });
 };
+
