@@ -229,6 +229,9 @@ form {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 3;
+  background-color: white;
 }
 
 .nav > .nav-header > .nav-title {
@@ -455,7 +458,7 @@ form {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 104vw;
+    width: calc(100vw + 2rem);
     background-color: var(--color-secondary);
     transition: all 0.3s ease-in;
     overflow-y: hidden;
@@ -476,6 +479,7 @@ form {
     display: block;
     width: 100%;
     font-size: 1.5rem;
+    margin-left: 1rem;
   }
   .nav > #nav-check:not(:checked) ~ .nav-items {
     height: 0px;
