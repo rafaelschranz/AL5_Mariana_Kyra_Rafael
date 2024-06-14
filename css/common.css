@@ -256,10 +256,10 @@ form {
 .nav > #nav-check {
   display: none;
 }
-.nav > .nav-items > a {
+.nav-link {
   transition: background-color 0.3s, color 0.3s;
 }
-.nav > .nav-items > a:hover {
+.nav-link:hover {
   color: var(--color-alternate);
 }
 /* Footer */
